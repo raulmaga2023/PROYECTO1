@@ -1,0 +1,310 @@
+:root {--blanco: #ffffff; /*recuerda que root refiere a propiedades especificas para elementos*/
+        --oscuro: #212121;
+        --primario: #4bf046;
+        --secundario: #0097a7;
+        --gris: #757575;
+        --grisclaro: #DFE9F3;
+        --fuente: 3.8rem;
+ }
+
+html { font-size: 62.5%; /* este valosres es estandar*, aveces.*/
+    box-sizing: border-box; /*hack para box model**/
+    scroll-snap-type:  y mandatory; /*esto es para que el sitio tenga un scroll down o lateral suave estilo apple.com, la letra X o Y se refiere al eje de desplazamiento*/
+}
+
+ /*scroll snap*/
+ .servicios, .nav-main, .formulario {
+    scroll-snap-align: center; /*esto no permite alinear el scroll hasta la seccion servicios*/
+    scroll-snap-stop: always; /*esto le permite deterne y tener que volver hacer scroll para llegar al fondo*/
+ }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+
+} 
+
+body {font-size: 16px;
+    font-family: 'Montserrat', sans-serif; /* 1rem = 10px */
+    background-color: #757575;
+    background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 100% );
+}
+
+    .contactar { color: var(--blanco);/*esto lo agregue yo para probar :p */
+                 padding-left: 20px;
+                }
+
+    .titulo {text-align: center; /*este viene siendo el raul magallanes*/
+            color:var(--primario);
+            }
+
+    .titulo span {text-align: center; /* este viene siendo el freelancer */
+                font-size: 2rem;
+                color: var(--oscuro);
+            }
+
+        .subtitulo {font-size: 2rem; /* este viene siendo Disenador bla bal bla ui ux */
+                    color:var(--blanco);
+                    padding-left:20px ;
+                
+                }
+                .ubicacion-icon {
+                    display: flex;
+                    align-items: flex-end;
+                    color: var(--blanco);
+                }
+
+    .contenedor { max-width:120rem;
+                  margin: 0 auto; 
+                    /* esto y lo de arriba es exactamente lo miso*/
+                } /*permite agrupar elemento para ordenarlos y poner margenes */
+
+       .boton {background-color: var(--secundario);
+                color: var(--blanco);
+                padding: 1rem 3rem;
+                margin-top: 1rem;
+                font-size: 2rem;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: bold;
+                border-radius: .5rem;  
+                width: 80%;
+                text-align: center;
+                border: none;
+                 }
+
+                 .boton:hover {
+                    cursor: pointer;
+                 }
+                @media (min-width: 768px) {
+                        .boton {
+                            width: auto;
+                        }
+                    }
+
+                
+                .sombra { 
+                    -webkit-box-shadow: -1px 9px 24px -2px rgba(0,0,0,0.43); /*vebkit moz box son prefijos para diferentes navegadores*/
+                    -moz-box-shadow: -1px 9px 24px -2px rgba(0,0,0,0.43);
+                    box-shadow: -1px 9px 24px -2px rgba(0,0,0,0.43);
+
+                    background-color: var(--blanco);
+                    padding: 3.8rem;
+                    border-radius: 2rem;
+
+                }
+                  
+                    /*tipografias **/
+                h1 { font-size: (3.8rem);
+
+                }
+        
+                h2 { font-size: (2.8rem);
+        
+                }
+                
+                h3 {font-size: (1.8rem);
+        
+                }
+        
+                h1, h2, h3 { text-align: center;
+        
+                }
+      
+                
+
+/** utilidades*/
+.w-sm-100 {
+    width: 100%; /* al usar esto en el html coloca los elementos ocupen su ancho maximo*/
+}
+
+@media (min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+
+}
+.alinear-derecha {
+    justify-content: flex-end;
+
+}
+
+    /*navegacion principal*/
+    .nav-bg {background-color: var(--secundario);}
+
+    .nav-main { display: flex;
+                flex-direction: column;
+                    
+    }  
+            @media (min-width: 768px) {
+                .nav-main { flex-direction: row;
+                            justify-content: space-between; /*en teoria...*/
+                            
+                        }
+                 }
+                    .nav-main a {
+                        color: var(--blanco);
+                        display: block;
+                        align-items: center;  /*toque extra ;)*/
+                        text-decoration: none;
+                        padding: 1rem;
+                        font-size: 2rem; 
+                        font-weight: 700; /*esto para que tome un tono negritas*/
+                        }
+                        .nav-main a:hover { 
+                            background-color: var(--primario); 
+                            color: var(--oscuro);
+                            
+                        }
+
+                .sado {
+                    background-image: url(../img/sado.jpg); /*propiedad de bg img para encontrar la imagen que desesas mostrar*/
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    height: 30rem;
+                    position: relative;
+                    margin-bottom: 2rem ;
+                }
+
+                    .contenido-sado {
+                        position: absolute;
+                        background-color: rgba(0, 0, 0, .2); /*antigua manera*/
+                        background-color: rgb(0 0 0 / 50%); /*nueva manera*/
+                        width: 100%;
+                        height: 100%;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        }
+
+                        .contenido-sado h2, .contenido-sado p{
+                            color: var(--blanco);
+
+                        }
+                        .contenido-sado h2 { 
+                            color: var(--blanco);
+                        }
+
+                            .contenido-sado svg { 
+                                color: var(--blanco);
+                         }
+
+                        
+
+            /**servicios*/
+
+         
+            .servicios {
+                display: grid; 
+                /*grid-template-columns: 300px 300px;
+                grid-template-rows: 200px 200px;
+
+                grid: 200px 800px / 300px 300px;
+                */
+                grid-template-columns: repeat(2,4fr); /*1fr signifia una fraccion del espacio para distribuir es de cir de 1 entero dividelo en tal, el reapt lo que hace es dsitribuir el codigo por el numero de vecez descrita*/ 
+                column-gap: 1rem;
+                align-items: center;
+               }
+            
+             @media (max-width: 768px) {
+            .servicios{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+            .servicios h3 {
+            color: var(--secundario);
+            font-weight: bold;
+        }
+        .servicios p {
+            line-height: 1.5;
+            text-align: center;
+        }
+        .servicios .iconos {
+                height: 10rem;
+                width: 10rem;
+                background-color: var(--primario);
+                border-radius: 50%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+        }
+             /** contato*/ 
+
+            .formulario{
+                background-color: var(--gris);
+                width: min( 60rem, 100%); /** lo que va a hacr min e utilizar el valor mas pequeno**/
+                margin: 0 auto;
+                padding: 2rem;
+                border-radius: 2rem;
+            }
+
+                .formulario fieldset {
+                    border: none;
+                }
+
+                .formulario legend {
+                    text-align: center;
+                    font-size: 1.8rem;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-bottom: 2rem;
+                    color: var(--blanco);
+
+                }
+                @media (min-width: 768px) {
+                    .contenedor-campos {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: auto auto 1rem;
+                        column-gap: 1.5rem;
+    
+                    }
+                    .campo:nth-child(3), .campo:nth-child(4){ /*esto nos ayuda sin tenr que hacer una nueva clase a ubicar un elemento cuando la clase se repite dependiento del numero se su posicion de arriba a bajo*/
+                        grid-column: 1/3; /* esto posiciona el espacio input dependiendo de su posicion template, usas fire inspector para mas*/
+                        
+                    }
+
+                }
+                
+                .campo{
+                    margin-bottom: 1rem;
+                }
+                .campo label {
+                    color: var(--blanco);
+                    font-weight: bold;
+                    margin-bottom: .5rem;
+                    display: block;
+                }
+                .campo textarea {
+                        height: 20rem;
+                }
+
+                .input-text {
+                    width: 100%;
+                    border: none;
+                    padding: 1.5rem;
+                    border-radius: 1.5rem;
+                }
+
+                .enviar .boton {
+                    width: 100%;
+                }
+            /*footer*/
+            
+            .footer {
+                text-align: center;
+                margin-top: 10rem;
+            }
+
+
+
+
+        
